@@ -1,0 +1,38 @@
+export default {
+  colors: {
+    primary: '#006DB7',
+    primary_light: '#519BD0',
+
+    text_light: '#8D9091',
+    text_secondary: '#7388AB',
+    text_white: '#FFFFFF',
+    text_grey: '#9EA3AE',
+    text_grey_light: '#C9CACA',
+    text_grey_dark: '#A7AAAB',
+    text_black: '#121212',
+    text_black_bold: '#11142D',
+    text_black_primary: '#404040',
+    text_success: '#48AA7B',
+    text_danger: '#CF4E4E',
+
+    shape: '#FFFFFF',
+    background: '#FAFAFA',
+    background_grey: '#F5F5F5',
+    background_grey_light: '#F8FAFC',
+    background_green_primary: '#F1FEFA',
+    background_blue_light: '#E6EFF5',
+
+    border_grey: '#E6EFF5',
+  },
+  fonts: {
+    thin: 'Inter-Thin',
+    extra_light: 'Inter-ExtraLight',
+    light: 'Inter-Light',
+    regular: 'Inter-Regular',
+    medium: 'Inter-Medium',
+    semi_bold: 'Inter-SemiBold',
+    bold: 'Inter-Bold',
+    extra_bold: 'Inter-ExtraBold',
+    black: 'Inter-Black',
+  },
+};
