@@ -1,27 +1,34 @@
 // import 'react-native-gesture-handler';
 import React, {useEffect} from 'react';
-import {Alert} from 'react-native';
-import {StatusBar, Platform} from 'react-native';
-import {ThemeProvider} from 'styled-components';
+import {StatusBar, Platform, Alert} from 'react-native';
+
+import messaging from '@react-native-firebase/messaging';
+import DeviceInfo from 'react-native-device-info';
+import {QueryClientProvider} from 'react-query';
+import {queryClient} from './services/queryClient';
 import Loader from 'react-native-modal-loader';
 import KeyboardManager from 'react-native-keyboard-manager';
 import SplashScreen from 'react-native-splash-screen';
-
-import messaging from '@react-native-firebase/messaging';
+import {ThemeProvider} from 'styled-components';
 import {setDeviceName, setTokenPush} from './store/actions/user';
-// import DeviceInfo from 'react-native-device-info';
+import {Provider, useSelector, useDispatch} from 'react-redux';
+import {RootState} from './store/storeConfig';
+
+
+
 import {AppRoutes} from './routes/app.routes';
 import theme from './global/styles/theme';
-import DeviceInfo from 'react-native-device-info';
-import {QueryClientProvider} from 'react-query';
-
-import {Provider, useSelector, useDispatch} from 'react-redux';
 import store from './store/storeConfig';
-import {queryClient} from './services/queryClient';
+
+
+
+
 
 const AppWrapper = () => {
   const dispatch = useDispatch();
   const {loading} = useSelector(state => state.loading);
+  const message = useSelector((state: RootState) => state.message);
+  // const  {message} = useSelector((state:RootState) => state.message);
 
   async function getFcmToken() {
     const fcmToken = await messaging().getToken();
@@ -53,11 +60,11 @@ const AppWrapper = () => {
     SplashScreen.hide();
   }, []);
 
-  // useEffect(() => {
-  //   if (message.text && message.text.toString().trim()) {
-  //     Alert.alert(message.title, message.text);
-  //   }
-  // }, [message]);
+  useEffect(() => {
+    if (message.text && message.text.toString().trim()) {
+      Alert.alert(message.title, message.text);
+    }
+  }, [message]);
 
   return (
     <ThemeProvider theme={theme}>

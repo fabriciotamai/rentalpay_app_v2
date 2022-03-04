@@ -1,5 +1,29 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {Alert} from 'react-native';
+
+import {RFValue} from 'react-native-responsive-fontsize';
+import {Button} from '../../../components/Button';
+import {StatusBar} from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
+import Feather from 'react-native-vector-icons/Feather'
+Feather.loadFont();
+import messaging from '@react-native-firebase/messaging';
+import DeviceInfo from 'react-native-device-info';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useDispatch, useSelector} from 'react-redux';
+
+
+//---------ACTIONS---------
+import {onLogin,setDeviceName, setTokenPush} from '../../../store/actions/user';
+import {RootState} from '../../../store/storeConfig';
+
+
+import Input from '../../../components/Input';
+import ArrowLeft from '../../../assets/icons/arrowLeftIcon.svg';
+
+import {RootStackParamList} from '../../../utils/RootStackParams';
+type screenPin = NativeStackNavigationProp<RootStackParamList, 'Pin'>;
 
 import {
   Container,
@@ -13,32 +37,6 @@ import {
   ButtonForgot,
   LabelForgot,
 } from './styles';
-
-import {RFValue} from 'react-native-responsive-fontsize';
-import {Button} from '../../../components/Button';
-import {StatusBar} from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
-import Feather from 'react-native-vector-icons/Feather'
-Feather.loadFont();
-
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-
-
-import {useDispatch, useSelector} from 'react-redux';
-
-import Input from '../../../components/Input';
-import {RootStackParamList} from '../../../utils/RootStackParams';
-
-import ArrowLeft from '../../../assets/icons/arrowLeftIcon.svg';
-
-import {useNavigation} from '@react-navigation/native';
-import {RootState} from '../../../store/storeConfig';
-
-type screenPin = NativeStackNavigationProp<RootStackParamList, 'Pin'>;
-
-// import api from '../../../services/api';
-
-import {onLogin} from '../../../store/actions/user';
 
 export function Login() {
   const navigation = useNavigation<screenPin>();
@@ -55,6 +53,25 @@ export function Login() {
   function handleLogin() {
     navigation.navigate('Pin');
   }
+
+  useFocusEffect(
+    useCallback(() =>{
+      async function getFcmToken() {
+       
+        const fcmToken = await messaging().getToken();
+       
+        if (fcmToken) {
+          console.log('---------',fcmToken);
+          DeviceInfo.getDeviceName().then(deviceName => {
+            dispatch(setDeviceName({device_name: deviceName}));
+            dispatch(setTokenPush({device_token: fcmToken}));
+          });
+        }
+      }
+      getFcmToken()
+
+    },[device_token])
+  )
 
  
 
@@ -92,7 +109,7 @@ export function Login() {
       />
       <Content>
         <Header>
-          <BackButtom>
+          <BackButtom onPress={()=> navigation.goBack()}>
             <ArrowLeft width={RFValue(14)} height={RFValue(14)} />
           </BackButtom>
 

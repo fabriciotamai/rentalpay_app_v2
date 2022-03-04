@@ -142,5 +142,6 @@ export const SelectPinDisable = styled.View`
 export const CardSelectPin = styled.View<IconProps>`
   flex-direction: row;
 
+  margin-bottom:${RFValue(80)}px;
   justify-content: center;
 `;

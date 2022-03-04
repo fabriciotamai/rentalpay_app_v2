@@ -27,7 +27,7 @@ import {
 } from './styles';
 import api from '../../../services/api';
 import {Alert} from 'react-native';
-import { onLoadBalance,getExtract } from '../../../store/actions/user';
+import { onLoadBalance,getExtract, onClearState } from '../../../store/actions/user';
 
 
 export function Pin() {
@@ -82,7 +82,7 @@ export function Pin() {
         if (response.data.status) {
           dispatch(onLoadBalance({device_token: device_token}));
           dispatch(getExtract({device_token: device_token}));
-          // dispatch(getExtract({device_token.device_token}))
+        
 
           navigation.navigate('TabRoutes');
         } else {
@@ -100,6 +100,12 @@ export function Pin() {
         console.log(err);
       });
   }
+
+ function handleSend(){
+   dispatch(onClearState())
+ 
+   navigation.navigate('Login')
+ }
 
   function ClearPin() {
     setPin1('');
@@ -142,12 +148,13 @@ export function Pin() {
 
   return (
     <Container>
-      <Header>
+  
         <CardLogo>
-          {/* <LogoRental width={RFValue(100)} height={RFValue(50)} /> */}
-        </CardLogo>
-      </Header>
-      <HeaderGlobal  icon="close"  />
+        <HeaderGlobal  iconClose="close"   onPress={handleSend} />
+         
+       </CardLogo>
+      
+   
 
         <ContentTitle>
           <TextTitle>Confirme seu Pin</TextTitle>

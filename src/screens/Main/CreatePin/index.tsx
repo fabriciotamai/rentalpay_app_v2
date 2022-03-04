@@ -5,6 +5,7 @@ import LogoRental from '../../../assets/imgs/rental_pay_logo.svg';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {useSelector, useDispatch} from 'react-redux';
 import { RootState} from '../../../store/storeConfig';
+import { onClearState} from '../../../store/actions/user';
 
 import {
   Container,
@@ -23,6 +24,7 @@ import {
   TextBtnWhite,
 } from './styles';
 import api from '../../../services/api';
+
 
 export function CreatePin() {
   const {device_token} = useSelector((state: RootState) => state.user);
@@ -70,23 +72,30 @@ export function CreatePin() {
   ]);
 
   function handleCreatePin() {
+    console.log(sumPin)
 
     api
       .post(
         'api/newPin',
         {
-          pin: '111111',
+          pin: sumPin,
         },
         {
           headers: {'device-token': device_token},
         },
       )
       .then(response => {
+        const { message} = response.data;
         if (response.data.status) {
-       Alert.alert('Pin criado com sucesso!');
+          dispatch(onClearState())
+
+       Alert.alert("Pin criado com sucesso!");
           setTimeout(() => {
-            navigation.navigate('TabRoutes');
+            navigation.navigate('Login');
           }, 1500);
+        }else{
+          Alert.alert(message);
+
         }
       });
   }
