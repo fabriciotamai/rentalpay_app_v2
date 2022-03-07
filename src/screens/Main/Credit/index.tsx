@@ -116,7 +116,7 @@ export function Credit() {
           <StartContent>
             <ValueContent>
               <ValueText>Valor disponível</ValueText>
-              <BalanceText>R$ 5000.00</BalanceText>
+              <BalanceText>R$ 0,00</BalanceText>
             </ValueContent>
             <ChipIcon />
           </StartContent>

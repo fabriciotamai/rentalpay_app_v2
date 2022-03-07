@@ -96,7 +96,7 @@ export function PayConfirmWallet() {
 
           <ValueContent>
             <SimbolText>R$</SimbolText>
-            <ValueText>200.00</ValueText>
+            <ValueText>0,00</ValueText>
           </ValueContent>
 
           <Options>

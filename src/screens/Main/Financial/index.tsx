@@ -45,7 +45,7 @@ export function Financial() {
     {
       user: 'Nome do usuário',
       date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
+      value: 'R$0,00',
       description: 'Depósito Orpag',
       type: 'positive',
       img: EntryIcon,
@@ -53,7 +53,7 @@ export function Financial() {
     {
       user: 'Nome do usuário',
       date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
+      value: 'R$0,00',
       description: 'Depósito Orpag',
       type: 'positive',
       img: EntryIcon,
@@ -61,7 +61,7 @@ export function Financial() {
     {
       user: 'Nome do usuário',
       date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
+      value: 'R$0,00',
       description: 'Depósito Orpag',
       type: 'positive',
       img: EntryIcon,
@@ -69,7 +69,7 @@ export function Financial() {
     {
       user: 'Nome do usuário',
       date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
+      value: 'R$0,00',
       description: 'Depósito Orpag',
       type: 'negative',
       img: ExitIcon,
@@ -77,7 +77,7 @@ export function Financial() {
     {
       user: 'Nome do usuário',
       date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
+      value: 'R$0,00',
       description: 'Depósito Orpag',
       type: 'positive',
       img: EntryIcon,
@@ -85,7 +85,7 @@ export function Financial() {
     {
       user: 'Nome do usuário',
       date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
+      value: 'R$0,00',
       description: 'Depósito Orpag',
       type: 'positive',
       img: EntryIcon,
@@ -93,7 +93,7 @@ export function Financial() {
     {
       user: 'Nome do usuário',
       date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
+      value: 'R$0,00',
       description: 'Depósito Orpag',
       type: 'positive',
       img: EntryIcon,
@@ -101,7 +101,7 @@ export function Financial() {
     {
       user: 'Nome do usuário',
       date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
+      value: 'R$0,00',
       description: 'Depósito Orpag',
       type: 'positive',
       img: EntryIcon,
@@ -109,7 +109,7 @@ export function Financial() {
     {
       user: 'Nome do usuário',
       date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
+      value: 'R$0,00',
       description: 'Depósito Orpag',
       type: 'positive',
       img: EntryIcon,
@@ -117,7 +117,7 @@ export function Financial() {
     {
       user: 'Nome do usuário',
       date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
+      value: 'R$0,00',
       description: 'Depósito Orpag',
       type: 'positive',
       img: EntryIcon,

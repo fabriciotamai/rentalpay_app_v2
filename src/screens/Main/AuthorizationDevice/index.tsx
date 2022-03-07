@@ -165,7 +165,7 @@ export function AuthorizationDevice() {
         token: result,
       })
       .then(response => {
-        console.log('aquiii', response.data);
+     
         if (response.data.status && !pin) {
           navigation.navigate('CreatePin');
         } else if (response.data.status && pin) {

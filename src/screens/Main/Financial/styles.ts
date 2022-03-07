@@ -52,8 +52,7 @@ export const BalanceValue = styled.Text`
 `;
 
 export const Content = styled.View`
-  width: 100%;
-  height: 100%;
+ flex:1;
   margin-top: ${RFValue(24)}px;
   background-color: ${({theme}) => theme.colors.shape};
   border-top-right-radius: ${RFValue(24)}px;
@@ -136,6 +135,7 @@ export const OutComeButtom = styled.TouchableOpacity<ButtomProps>`
 export const OutComeButtomText = styled.Text``;
 
 export const ActivityList = styled.FlatList`
+flex:1;
   width: 100%;
 `;
 

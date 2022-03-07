@@ -58,7 +58,7 @@ export function Withdraw() {
       />
       <Content>
         <Wrapper>
-          {/* {console.log('meu balance',totalBalance.brl)} */}
+         
           <Header>
             <BackButtom onPress={handleBack}>
               <ArrowLeft width={RFValue(14)} height={RFValue(14)} />

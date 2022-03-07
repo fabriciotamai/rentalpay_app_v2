@@ -98,7 +98,7 @@ export const onClearState = () => {
 
 export const onLogin = payload => {
   return dispatch => {
-    console.log(payload);
+
     dispatch(setLoading({loading: true}));
     api
       .post('api/login', {
@@ -108,7 +108,7 @@ export const onLogin = payload => {
       })
 
       .then(async response => {
-        console.log(response.data);
+       
         const {access_token} = response.data;
         const {pin, device_token_status} = response.data.api;
 

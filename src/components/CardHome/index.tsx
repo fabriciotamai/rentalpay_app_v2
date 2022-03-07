@@ -116,15 +116,11 @@ export function CardHome({
       );
     }
   }
-  // useEffect(() => {
-  // const {total} = balance;
-  // console.log(total)
-
-  // },[])
+ 
 
   function getButtonCenter() {
     if (!typeTransaction && type === 'Home') {
-      {console.log('aqui',totalBalance)}
+    
       return (
         <>
           <ArrowUpIcon width={RFValue(23)} height={RFValue(23)} />

@@ -31,7 +31,7 @@ export function ModalTransaction({visible, setVisible, type}: Props) {
   //   setModalVisible(!isModalVisible);
   // };
   function getData(method: 'BRL' | 'CRYPTO' | 'CREDIT') {
-    console.log(method);
+   
     if (method === 'BRL') {
       return (
         <>

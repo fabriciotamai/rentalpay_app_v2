@@ -43,7 +43,7 @@ export function Splash() {
         },
       })
       .then(response => {
-        console.log(response.data);
+       
         if (response.data.status) {
           navigation.navigate('Pin');
         }

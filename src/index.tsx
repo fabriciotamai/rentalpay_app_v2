@@ -33,7 +33,7 @@ const AppWrapper = () => {
   async function getFcmToken() {
     const fcmToken = await messaging().getToken();
     if (fcmToken) {
-      console.log(fcmToken);
+    
       DeviceInfo.getDeviceName().then(deviceName => {
         dispatch(setDeviceName({device_name: deviceName}));
         dispatch(setTokenPush({device_token: fcmToken}));

@@ -150,7 +150,7 @@ export function TransactionExtract() {
       </Header>
       <BalanceContent>
         <BalanceText>Saldo em Real</BalanceText>
-        <BalanceValue>R$ 669.10</BalanceValue>
+        <BalanceValue>R$ 0,00</BalanceValue>
       </BalanceContent>
       <Content>
         <OptionsTab>

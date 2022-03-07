@@ -46,8 +46,8 @@ export function Login() {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
 
-  const [email, setEmail] = useState('user@rentalcoins.dev');
-  const [password, setPassword] = useState('user');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
  
 
   function handleLogin() {
@@ -61,7 +61,7 @@ export function Login() {
         const fcmToken = await messaging().getToken();
        
         if (fcmToken) {
-          console.log('---------',fcmToken);
+         
           DeviceInfo.getDeviceName().then(deviceName => {
             dispatch(setDeviceName({device_name: deviceName}));
             dispatch(setTokenPush({device_token: fcmToken}));

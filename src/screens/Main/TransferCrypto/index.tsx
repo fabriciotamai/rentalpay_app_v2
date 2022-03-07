@@ -74,7 +74,7 @@ export function TransferCrypto() {
         })
         .then(response => {
           const {coins} = response.data;
-          console.log(coins);
+          
           if (response.data.status) {
             setCurrencys(coins);
           }
