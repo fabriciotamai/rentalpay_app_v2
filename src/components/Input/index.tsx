@@ -16,6 +16,7 @@ import {SvgProps} from 'react-native-svg';
 
 interface InputProps extends TextInputProps {
   icon?: FC<SvgProps>;
+  active?:boolean;
   handlePress?: () => void;
 }
 
@@ -24,7 +25,7 @@ interface InputRef {
 }
 
 const Input: ForwardRefRenderFunction<InputRef, InputProps> = (
-  {icon: Icon, handlePress, ...rest},
+  {icon: Icon, active= false, handlePress, ...rest},
   ref,
 ) => {
   const inputElementRef = useRef<any>(null);
@@ -46,7 +47,7 @@ const Input: ForwardRefRenderFunction<InputRef, InputProps> = (
   }));
 
   return (
-    <Container isFocused={isFocused}>
+    <Container isFocused={isFocused} active={active}>
       <TextInput
         ref={inputElementRef}
         onFocus={handleInputFocus}

@@ -407,19 +407,19 @@ PODS:
     - React-Core
   - RNCClipboard (1.5.1):
     - React-Core
-  - RNDeviceInfo (8.4.9):
+  - RNDeviceInfo (8.5.0):
     - React-Core
-  - RNFBApp (14.5.0):
+  - RNFBApp (14.5.1):
     - Firebase/CoreOnly (= 8.12.1)
     - React-Core
-  - RNFBMessaging (14.5.0):
+  - RNFBMessaging (14.5.1):
     - Firebase/Messaging (= 8.12.1)
     - React-Core
     - RNFBApp
   - RNGestureHandler (1.10.3):
     - React-Core
-  - RNSVG (12.1.1):
-    - React
+  - RNSVG (12.3.0):
+    - React-Core
   - RNVectorIcons (9.1.0):
     - React-Core
   - Yoga (1.14.0)
@@ -666,15 +666,15 @@ SPEC CHECKSUMS:
   ReactNativeKeyboardManager: f82a63e0982254fb0f6a17ba327fac575a46f1e9
   RNCAsyncStorage: b49b4e38a1548d03b74b30e558a1d18465b94be7
   RNCClipboard: 41d8d918092ae8e676f18adada19104fa3e68495
-  RNDeviceInfo: 4944cf8787b9c5bffaf301fda68cc1a2ec003341
-  RNFBApp: 06c8447270d295edc431bccd55970d8711a07a42
-  RNFBMessaging: 8e3575bb0303b43a852bf5decbe99c3272035048
+  RNDeviceInfo: a674f06c5a5bd496aebb809cbc3be61cfd612a65
+  RNFBApp: 5bae3002117e55f3c9aa0fb38175dd16c8046c90
+  RNFBMessaging: ae6c40883868cd01fa802395174ec7d61cfa0920
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
+  RNSVG: 302bfc9905bd8122f08966dc2ce2d07b7b52b9f8
   RNVectorIcons: 7923e585eaeb139b9f4531d25a125a1500162a0b
   Yoga: 90dcd029e45d8a7c1ff059e8b3c6612ff409061a
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 5bdd59684163d3526d9b876a4a1f5968c8e71ef3
+PODFILE CHECKSUM: 6693de3130818dc4445c56b025c9a6921e1ee375
 
 COCOAPODS: 1.11.2

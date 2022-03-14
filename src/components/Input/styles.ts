@@ -3,7 +3,10 @@ import {RFValue} from 'react-native-responsive-fontsize';
 
 interface Props {
   isFocused: boolean;
+  active:boolean;
 }
+
+
 
 export const Container = styled.View<Props>`
   width: 100%;
@@ -18,8 +21,8 @@ export const Container = styled.View<Props>`
   margin-bottom: ${RFValue(16)}px;
   border-width: ${RFValue(1)}px;
   border-color: ${({theme}) => theme.colors.background};
-  ${({isFocused, theme}) =>
-    isFocused &&
+  ${({active, theme}) =>
+    active &&
     css`
       border-color: ${theme.colors.primary};
     `}
