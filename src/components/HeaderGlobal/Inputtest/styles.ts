@@ -12,7 +12,7 @@ export const Container = styled(TextInput)<Props>`
 
 
 ${({active, theme }) => active && css`
-border-width:3px;
+border-width:${RFValue(10)}px;
 border-color:${theme.colors.primary};
 
 

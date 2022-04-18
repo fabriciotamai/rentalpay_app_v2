@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {StatusBar} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {useNavigation} from '@react-navigation/native';
@@ -21,9 +21,10 @@ import {
   CardCoinsContent,
 } from './styles';
 
-import {useUser} from '../../../hooks/useGetRepo';
 
 import {RootStackParamList} from '../../../utils/RootStackParams';
+import {onLoadExtractModal} from '../../../store/actions/extractUser';
+import { useDispatch } from 'react-redux';
 
 
 import {CardHome} from '../../../components/CardHome';
@@ -39,20 +40,23 @@ import EthIcon from '../../../assets/icons/tether_icon.svg';
 import CardanoIcon from '../../../assets/icons/cardano_icon.svg';
 import ZeltsIcon from '../../../assets/icons/zelts_icon.svg';
 
-interface CardProps {
-  type: 'brl' | 'crypto';
-}
+// interface CardProps {
+//   type: 'brl' | 'crypto';
+// }
 type screens = NativeStackNavigationProp<RootStackParamList>;
 
 import {RootState} from '../../../store/storeConfig';
 
 
 export function Transactions() {
-  const {device_token, totalBalance, currencys, extract} = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
+  const { totalBalance, currencys, extract} = useSelector((state: RootState) => state.user);
   const navigation = useNavigation<screens>();
   const [typeTransaction, setTypeTransaction] = useState(false);
   // const {typeCurrency} = useUser();
   const [modalVisible, setModalVisible] = useState(false);
+
+  const [ buttonActive, setButtonActive] = useState(false);
 
   function handleTransactionExtract() {
     if (!typeTransaction) {
@@ -62,99 +66,28 @@ export function Transactions() {
     }
   }
 
-  const data = [
-    {
-      user: 'Nome do usuário',
-      date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
-      description: 'Depósito Orpag',
-      type: 'positive',
-      img: EntryIcon,
-    },
-    {
-      user: 'Nome do usuário',
-      date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
-      description: 'Depósito Orpag',
-      type: 'positive',
-      img: EntryIcon,
-    },
-    {
-      user: 'Nome do usuário',
-      date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
-      description: 'Depósito Orpag',
-      type: 'positive',
-      img: EntryIcon,
-    },
-    {
-      user: 'Nome do usuário',
-      date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
-      description: 'Depósito Orpag',
-      type: 'negative',
-      img: ExitIcon,
-    },
-    {
-      user: 'Nome do usuário',
-      date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
-      description: 'Depósito Orpag',
-      type: 'positive',
-      img: EntryIcon,
-    },
-    {
-      user: 'Nome do usuário',
-      date: 'Qua 7 Nov 2021 07:18:00',
-      value: 'R$900.00',
-      description: 'Depósito Orpag',
-      type: 'positive',
-      img: EntryIcon,
-    },
-  ];
+  function openModalExtractOrUpdateRedux(modalVisible:boolean, item:object):void {
+   
+    setModalVisible(modalVisible);
 
-  const coins = [
-    {
-      img: BtcIcon,
-      name: 'Bitcoin (BTC)',
-      balance: '0.0020000',
-    },
-    {
-      img: EthIcon,
-      name: 'Ethereum (ETH)',
-      balance: '0.0020000',
-    },
-    {
-      img: CardanoIcon,
-      name: 'Cardano (ADA)',
-      balance: '0.0020000',
-    },
-    {
-      img: ZeltsIcon,
-      name: 'Zelts Silver',
-      balance: '0.0020000',
-    },
-    {
-      img: BtcIcon,
-      name: 'Bitcoin (BTC)',
-      balance: '0.0020000',
-    },
-    {
-      img: EthIcon,
-      name: 'Ethereum (ETH)',
-      balance: '0.0020000',
-    },
-    {
-      img: CardanoIcon,
-      name: 'Cardano (ADA)',
-      balance: '0.0020000',
-    },
-    {
-      img: ZeltsIcon,
-      name: 'Zelts Silver',
-      balance: '0.0020000',
-    },
-  ];
+
+    dispatch(onLoadExtractModal({
+      id:item.id,
+      date:item.created_at,
+      type_transaction:item.type_id,
+      status:item.status,
+      value:item.value,
+
+
+    }))
+    
+
+
+  }
+
+
+
+  
 
   return (
     <Container>
@@ -189,20 +122,23 @@ export function Transactions() {
         <SeeAllButton onPress={handleTransactionExtract}>
           <SeeAll>Ver todas</SeeAll>
         </SeeAllButton>
+
+        
       </SubTitlesContent>
       {!typeTransaction ? (
+
         <ActivityList
           data={extract}
           renderItem={({item, index}) => (
-            <ButtonCard onPress={() => setModalVisible(true)}>
-              <CardData data={item} background={index} img={item.img} />
-            </ButtonCard>
+           
+              <CardData onPress={() => openModalExtractOrUpdateRedux(!modalVisible, item)} data={item} background={index} img={item.img} />
+            
           )}
           showsVerticalScrollIndicator={false}
         />
       ) : (
         <CardCoinsContent
-          data={currencys}
+          data={extract}
           renderItem={({item}) => <CardCoin data={item} img={item.img} />}
         />
       )}
@@ -214,3 +150,5 @@ export function Transactions() {
     </Container>
   );
 }
+
+

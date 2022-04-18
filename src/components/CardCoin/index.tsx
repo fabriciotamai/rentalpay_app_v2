@@ -21,6 +21,8 @@ import ZeltsSilver from '../../assets/icons/zeltsSilver.svg';
 import {SvgProps} from 'react-native-svg';
 
 interface Props extends TouchableOpacityProps {
+  symbol: any;
+  balance_brl: any;
   img?: FC<SvgProps>;
   name?: any;
   balance?: any;

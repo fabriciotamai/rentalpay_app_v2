@@ -96,7 +96,7 @@ export function WithdrawConfirm({route}) {
               value={idORpag}
               onChangeText={setIDORpag}
               autoCapitalize="none"
-              keyboardType="email-address"
+              // keyboardType="email-address"
               placeholderTextColor="#C9CACA"
             />
           </OrpagContent>

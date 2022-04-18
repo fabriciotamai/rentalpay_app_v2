@@ -1,8 +1,8 @@
 import api from '../../services/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import {setLoading} from './loading';
-import {setMessage} from './message';
+import { setLoading } from './loading';
+import { setMessage } from './message';
 
 export interface UserProps {
   id?: string | null;
@@ -19,7 +19,7 @@ export interface UserProps {
   access_token?: string | null;
   totalBalance?: [] | null;
   pin?: string | null;
-  currencys?: [] | nulll;
+  currencys?: [] | null;
   google2fa_secret?: string | null;
   device_token_status?: boolean | null;
 }
@@ -83,6 +83,8 @@ export const setAddressWalletReceive = (address: string) => {
   };
 };
 
+
+
 export const setLoadExtract = (extract: object) => {
   return {
     type: 'GET_EXTRACT',
@@ -99,7 +101,7 @@ export const onClearState = () => {
 export const onLogin = payload => {
   return dispatch => {
 
-    dispatch(setLoading({loading: true}));
+    dispatch(setLoading({ loading: true }));
     api
       .post('api/login', {
         email: payload.email,
@@ -108,9 +110,9 @@ export const onLogin = payload => {
       })
 
       .then(async response => {
-       
-        const {access_token} = response.data;
-        const {pin, device_token_status} = response.data.api;
+
+        const { access_token } = response.data;
+        const { pin, device_token_status, } = response.data.api;
 
         if (response.data.status) {
           dispatch(
@@ -118,6 +120,7 @@ export const onLogin = payload => {
               access_token: access_token,
               pin: pin,
               device_token_status: device_token_status,
+              email_verified_at: null
             }),
           );
           await AsyncStorage.setItem(
@@ -144,20 +147,21 @@ export const onLogin = payload => {
             text: 'Usuário/senha inválidos ',
           }),
         );
-      }).finally(() =>   dispatch(setLoading({loading: false})));
+      }).finally(() => dispatch(setLoading({ loading: false })));
   };
 };
 
 export const onLoadBalance = payload => {
   return dispatch => {
-    dispatch(setLoading({loading: true}));
+    dispatch(setLoading({ loading: true }));
     api
       .get('api/balance', {
-        headers: {'device-token': payload.device_token},
+        headers: { 'device-token': payload.device_token },
       })
       .then(response => {
-        dispatch(setLoading({loading: false}));
-        const {coins, total} = response.data;
+        console.log(response.data)
+        dispatch(setLoading({ loading: false }));
+        const { coins, total } = response.data;
         dispatch(
           setBalance({
             totalBalance: total,
@@ -171,30 +175,31 @@ export const onLoadBalance = payload => {
         }
       })
       .catch(err => {
-        dispatch(setLoading({loading: false}));
+        dispatch(setLoading({ loading: false }));
       })
-      .finally(() => dispatch(setLoading({loading: false})));
+      .finally(() => dispatch(setLoading({ loading: false })));
   };
 };
 
 export const getExtract = payload => {
-  return dispatch => {
-    dispatch(setLoading({loading: true}));
+  return  dispatch => {
+    dispatch(setLoading({ loading: true }));
     api
       .get('api/extract', {
-        headers: {'device-token': payload.device_token},
+        headers: { 'device-token': payload.device_token },
       })
       .then(response => {
-        const {results} = response.data;
+     
+        const { results } = response.data;
         if (response.data.status) {
-          dispatch(setLoadExtract({extract: results}));
+          dispatch(setLoadExtract({ extract: results }));
         }
 
-        dispatch(setLoading({loading: false}));
+        dispatch(setLoading({ loading: false }));
       })
       .catch(error => {
-        dispatch(setLoading({loading: false}));
+        dispatch(setLoading({ loading: false }));
       })
-      .finally(() => dispatch(setLoading({loading: false})));
+      .finally(() => dispatch(setLoading({ loading: false })));
   };
 };

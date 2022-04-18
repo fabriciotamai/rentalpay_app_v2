@@ -24,7 +24,12 @@ interface Props {
   type: 'BRL' | 'CRYPTO' | 'CREDIT';
 }
 
+import { RootState} from '../../store/storeConfig';
+
+import { useSelector} from 'react-redux';
+
 export function ModalTransaction({visible, setVisible, type}: Props) {
+  const { id, status, date, type_transaction , value} = useSelector((state:RootState) => state.extractUser);
   // const [isModalVisible, setModalVisible] = useState(visible);
 
   // const toggleModal = () => {
@@ -44,7 +49,7 @@ export function ModalTransaction({visible, setVisible, type}: Props) {
             <ModalValue>#2102</ModalValue>
           </ModalContent>
           <ModalContent>
-            <ModalTitle>Data</ModalTitle>
+            <ModalTitle>{date}</ModalTitle>
             <ModalValue>7/11/21 07:18:21</ModalValue>
           </ModalContent>
           <ModalContent>
@@ -53,7 +58,7 @@ export function ModalTransaction({visible, setVisible, type}: Props) {
           </ModalContent>
           <ModalContent>
             <ModalTitle>Valor</ModalTitle>
-            <ModalValue>R$ 900.00</ModalValue>
+            <ModalValue>{value}</ModalValue>
           </ModalContent>
           <ModalContent>
             <ModalTitle>Status</ModalTitle>

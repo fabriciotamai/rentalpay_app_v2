@@ -22,6 +22,17 @@ import {CardHome} from '../../../components/CardHome';
 import {CardCoin} from '../../../components/CardCoin';
 import {CardData} from '../../../components/CardData';
 
+interface Props {
+  typeNavi: 'Receive' | 'Pay' | 'Crypto',
+  typeTrasaction:'Home | Transacations'
+
+}
+
+interface User extends Props {
+  card:Props;
+
+}
+
 
 import api from '../../../services/api';
 import {setLoading} from '../../../store/actions/loading';
@@ -48,56 +59,6 @@ export function Home() {
   const {device_token, totalBalance, currencys, extract} = useSelector((state: RootState) => state.user);
   const navigation = useNavigation();
   const [typeTransaction, setTypeTransaction] = useState(false);
-
-
-
-
-
-
-  // const coins = [
-  //   {
-  //     img: BtcIcon,
-  //     name: 'Bitcoin (BTC)',
-  //     balance: '0.0020000',
-  //   },
-  //   {
-  //     img: EthIcon,
-  //     name: 'Ethereum (ETH)',
-  //     balance: '0.0020000',
-  //   },
-  //   {
-  //     img: CardanoIcon,
-  //     name: 'Cardano (ADA)',
-  //     balance: '0.0020000',
-  //   },
-  //   {
-  //     img: ZeltsIcon,
-  //     name: 'Zelts Silver',
-  //     balance: '0.0020000',
-  //   },
-  //   {
-  //     img: BtcIcon,
-  //     name: 'Bitcoin (BTC)',
-  //     balance: '0.0020000',
-  //   },
-  //   {
-  //     img: EthIcon,
-  //     name: 'Ethereum (ETH)',
-  //     balance: '0.0020000',
-  //   },
-  //   {
-  //     img: CardanoIcon,
-  //     name: 'Cardano (ADA)',
-  //     balance: '0.0020000',
-  //   },
-  //   {
-  //     img: ZeltsIcon,
-  //     name: 'Zelts Silver',
-  //     balance: '0.0020000',
-  //   },
-  // ];
-
-  
 
 
 
