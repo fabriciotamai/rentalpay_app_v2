@@ -7,5 +7,5 @@ import { Profile} from '../../screens/Profile';
 test('check if show correctly user input placehlder', () =>{
     const { getByPlaceholderText} = render (<Profile/>)
 
-    const inputName  = getByPlaceholderText('Nome')
+    const inputName  = getByPlaceholderText('Email')
 })

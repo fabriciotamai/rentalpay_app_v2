@@ -63,6 +63,56 @@ export function Home() {
 
 
 
+
+
+  // const coins = [
+  //   {
+  //     img: BtcIcon,
+  //     name: 'Bitcoin (BTC)',
+  //     balance: '0.0020000',
+  //   },
+  //   {
+  //     img: EthIcon,
+  //     name: 'Ethereum (ETH)',
+  //     balance: '0.0020000',
+  //   },
+  //   {
+  //     img: CardanoIcon,
+  //     name: 'Cardano (ADA)',
+  //     balance: '0.0020000',
+  //   },
+  //   {
+  //     img: ZeltsIcon,
+  //     name: 'Zelts Silver',
+  //     balance: '0.0020000',
+  //   },ß
+  //   {
+  //     img: BtcIcon,
+  //     name: 'Bitcoin (BTC)',
+  //     balance: '0.0020000',
+  //   },
+  //   {
+  //     img: EthIcon,
+  //     name: 'Ethereum (ETH)',
+  //     balance: '0.0020000',
+  //   },
+  //   {
+  //     img: CardanoIcon,
+  //     name: 'Cardano (ADA)',
+  //     balance: '0.0020000',
+  //   },
+  //   {
+  //     img: ZeltsIcon,
+  //     name: 'Zelts Silver',
+  //     balance: '0.0020000',
+  //   },
+  // ];
+
+  
+
+
+
+
   function handleTransactionWallets() {
     navigation.navigate('TransactionWallets');
   }

@@ -2,6 +2,8 @@ import React, {useState, useEffect, useCallback, useContext} from 'react';
 import {Alert} from 'react-native';
 
 import  {useForm} from 'react-hook-form';
+import * as Yup from 'yup';
+import { yupResolver} from '@hookform/resolvers/yup'
 
 import {RFValue} from 'react-native-responsive-fontsize';
 import {Button} from '../../../components/Button';
@@ -48,6 +50,12 @@ interface formData {
 
 }
 
+const schema =  Yup.object().shape({
+  name:Yup.string().required('Email é obrigatorio'),
+  password:Yup.string().required('Password é obrigatorio')
+
+})
+
 export function Login() {
   const {user} = useAuth();
   const navigation = useNavigation<screenPin>();
@@ -65,7 +73,13 @@ export function Login() {
   function handleLogin() {
     navigation.navigate('Pin');
   }
-  const {control, handleSubmit} = useForm();
+  const {
+    control, 
+    handleSubmit,
+    formState : { errors}
+  } = useForm({
+    resolver:yupResolver(schema)
+  });
 
   function testeRegister(form:formData) {
    const data = {
@@ -168,3 +182,4 @@ export function Login() {
     </Container>
   );
 }
+
