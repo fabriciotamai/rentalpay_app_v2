@@ -4,6 +4,7 @@ const initialState = {
   id: null,
   name: null,
   username: null,
+  profile:[],
   role_id: null,
   email: null,
   email_verified_at: null,
@@ -28,6 +29,7 @@ const initialState = {
   device_name: null,
   currencys: null,
   extract: null,
+  creditExtract:null
 };
 
 const user = (
@@ -54,6 +56,7 @@ const user = (
         google2fa_secret: action.payload.google2fa_secret,
         created_at: action.payload.created_at,
         device_token_status: action.payload.device_token_status,
+        profile:action.payload.profile,
 
         access_token: action.payload.access_token,
       };
@@ -61,6 +64,11 @@ const user = (
       return {
         ...state,
         device_token: action.payload.device_token,
+      };
+      case 'SET_CREDIT_EXTRACT':
+      return {
+        ...state,
+        creditExtract: action.payload.creditExtract,
       };
     case 'SET_DEVICE_NAME':
       return {

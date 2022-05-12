@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 
+
+import { useSelector, useDispatch } from 'react-redux';
+import {RootState} from '../../../store/storeConfig';
 import {
   Container,
   Content,
@@ -33,6 +36,7 @@ interface FilterProps {
 }
 
 export function CreditExtract() {
+  const {creditExtract} = useSelector((state: RootState) => state.user);
   const navigation = useNavigation();
   const [filter, setFilter] = useState('all');
 
@@ -169,7 +173,7 @@ export function CreditExtract() {
           </PaymentButtom>
         </OptionsTab>
         <ActivityList
-          data={data}
+          data={creditExtract}
           renderItem={({item, index}) => (
             <CardData data={item} background={index} img={item.img} />
           )}

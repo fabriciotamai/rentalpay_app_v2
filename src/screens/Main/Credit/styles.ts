@@ -2,6 +2,9 @@ import styled from 'styled-components/native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {getStatusBarHeight} from 'react-native-iphone-x-helper';
 import LinearGradient from 'react-native-linear-gradient';
+import {TextInputMask} from 'react-native-masked-text';
+
+
 
 export const Container = styled.View`
   flex: 1;
@@ -32,7 +35,7 @@ export const TextCard = styled.Text`
 `;
 
 export const CardButtonsContent = styled.View`
-  width: 90%;
+  /* width: 90%; */
   height: ${RFValue(65)}px;
   flex-direction: row;
   justify-content: space-between;
@@ -165,7 +168,7 @@ export const ValueText = styled.Text`
   line-height: ${RFValue(14)}px;
 `;
 
-export const BalanceText = styled.Text`
+export const BalanceText = styled(TextInputMask)`
   font-family: ${({theme}) => theme.fonts.regular};
   color: ${({theme}) => theme.colors.shape};
   font-size: ${RFValue(20)}px;

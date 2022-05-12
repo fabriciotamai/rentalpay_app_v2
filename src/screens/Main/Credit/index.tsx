@@ -1,7 +1,12 @@
-import React from 'react';
-import {StatusBar} from 'react-native';
+import React,{useEffect, useState} from 'react';
+import {StatusBar, Alert} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {useNavigation} from '@react-navigation/native';
+import api from '../../../services/api';
+
+import { useSelector, useDispatch } from 'react-redux';
+import {RootState} from '../../../store/storeConfig';
+import {getExtractCredit} from '../../../store/actions/user';
 
 import {
   Container,
@@ -47,6 +52,7 @@ import LogoRentalCredit from '../../../assets/icons/logo_rental_credit.svg';
 import ChipIcon from '../../../assets/icons/chip_icon.svg';
 import BgCardImg from '../../../assets/imgs/bg_card.png';
 
+
 interface CardCoinProps {
   coinImage: string;
   coinName: string;
@@ -54,14 +60,38 @@ interface CardCoinProps {
 }
 
 export function Credit() {
+  const {totalBalance, profile, device_token} = useSelector((state: RootState) => state.user);
+  const [moneyCredit, setMoneyCredit] = useState<Number>(Number(totalBalance?.data_rc?.balance).toFixed(2));
+  const dispatch = useDispatch();
+  
   const navigation = useNavigation();
 
   function handleCreditExtract() {
     navigation.navigate('CreditExtract');
   }
   function handleCreditRequest() {
-    navigation.navigate('CreditRequest');
+    Alert.alert('Em breve !')
+    // navigation.navigate('CreditRequest');
   }
+  
+  function handleMe(){
+    api.get('api/me',{
+     headers: { 'device-token':device_token },
+ 
+    }
+    
+    ).then(response =>{
+      console.log('meeeeeeee',response.data)
+ 
+    })
+   }
+  useEffect(() => {
+    console.log('------',totalBalance?.data_rc?.balance)
+    dispatch(getExtractCredit({device_token: device_token}));
+  },[])
+
+
+ 
 
   return (
     <Container>
@@ -116,22 +146,55 @@ export function Credit() {
           <StartContent>
             <ValueContent>
               <ValueText>Valor disponível</ValueText>
-              <BalanceText>R$ 0,00</BalanceText>
+              
+              {/* <BalanceText>RP {Number(totalBalance?.data_rc?.balance).toFixed(2)}</BalanceText> */}
+              <BalanceText
+              options={{
+                precision: 2,
+                separator: ',',
+                delimiter: '.',
+                unit: '',
+                suffixUnit: '',
+              }}
+              type={'money'}
+              value={moneyCredit}
+              editable={false}
+            
+           
+              placeholder="0,00"
+             
+              
+              />
             </ValueContent>
             <ChipIcon />
           </StartContent>
           <CenterContent>
             <LimitContent>
-              <LimitText>LIMITE UTILIZADO</LimitText>
-              <LimitValueText>R$ 3000.00</LimitValueText>
+              <LimitText>R. Credit Holder</LimitText>
+              <LimitValueText>{`${profile?.name} ${profile?.lastname} `}</LimitValueText>
+              {/* <LimitValueText
+               
+                options={{
+                  precision: 2,
+                  separator: ',',
+                  delimiter: '.',
+                  unit: '',
+                  suffixUnit: '',
+                }}
+                type={'money'}
+                value={moneyCredit}
+              
+                autoFocus={true}
+                placeholder="0,00"
+                placeholderTextColor="#000"
+              /> */}
             </LimitContent>
             <ContractContent>
-              <ContractText>CONTRATO</ContractText>
-              <ContractValueText>#120293</ContractValueText>
+              <ContractText>Expira</ContractText>
+              <ContractValueText>**/**</ContractValueText>
             </ContractContent>
             <ValidateContent>
-              <ValidateText>CONTRATO</ValidateText>
-              <ValidateValueText>#120293</ValidateValueText>
+             
             </ValidateContent>
           </CenterContent>
         </HeaderContent>

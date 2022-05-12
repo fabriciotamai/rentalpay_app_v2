@@ -1,0 +1,301 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.rentalpay_app_v2"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="30" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/debug/AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:4:5-67
+12-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+13-->[com.facebook.flipper:flipper:0.99.0] /Users/fabricioalves/.gradle/caches/transforms-3/df7b208c45426f45016d16c0c3a6a059/transformed/jetified-flipper-0.99.0/AndroidManifest.xml:16:5-76
+13-->[com.facebook.flipper:flipper:0.99.0] /Users/fabricioalves/.gradle/caches/transforms-3/df7b208c45426f45016d16c0c3a6a059/transformed/jetified-flipper-0.99.0/AndroidManifest.xml:16:22-73
+14    <uses-permission android:name="android.permission.WAKE_LOCK" />
+14-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-68
+14-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-65
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+15-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-79
+15-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-76
+16    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+16-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:25:5-82
+16-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:25:22-79
+17    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+17-->[com.android.installreferrer:installreferrer:1.1.2] /Users/fabricioalves/.gradle/caches/transforms-3/aa8b66c6e700288f91862b6c68209a14/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:5-110
+17-->[com.android.installreferrer:installreferrer:1.1.2] /Users/fabricioalves/.gradle/caches/transforms-3/aa8b66c6e700288f91862b6c68209a14/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:22-107
+18
+19    <application
+19-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:6:5-24:19
+20        android:name="com.rentalpay_app_v2.MainApplication"
+20-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:7:7-38
+21        android:allowBackup="false"
+21-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:11:7-34
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.5.0] /Users/fabricioalves/.gradle/caches/transforms-3/540dbfb90b248d7b59cd154497c15f99/transformed/core-1.5.0/AndroidManifest.xml:24:18-86
+23        android:debuggable="true"
+24        android:icon="@mipmap/ic_launcher"
+24-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:9:7-41
+25        android:label="@string/app_name"
+25-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:8:7-39
+26        android:roundIcon="@mipmap/ic_launcher_round"
+26-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:10:7-52
+27        android:theme="@style/AppTheme"
+27-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:12:7-38
+28        android:usesCleartextTraffic="true" >
+28-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/debug/AndroidManifest.xml:8:9-44
+29        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+29-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/debug/AndroidManifest.xml:11:9-86
+29-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/debug/AndroidManifest.xml:11:19-83
+30        <activity
+30-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:13:7-23:18
+31            android:name="com.rentalpay_app_v2.MainActivity"
+31-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:14:9-37
+32            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+32-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:16:9-86
+33            android:label="@string/app_name"
+33-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:15:9-41
+34            android:launchMode="singleTask"
+34-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:17:9-40
+35            android:windowSoftInputMode="adjustResize" >
+35-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:18:9-51
+36            <intent-filter>
+36-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:19:9-22:25
+37                <action android:name="android.intent.action.MAIN" />
+37-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:20:13-65
+37-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:20:21-62
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:21:13-73
+39-->/Users/fabricioalves/rentalpay_app_v2/android/app/src/main/AndroidManifest.xml:21:23-70
+40            </intent-filter>
+41        </activity>
+42
+43        <service android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingHeadlessService" />
+43-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-111
+43-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:18-108
+44        <service
+44-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:9-21:19
+45            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingService"
+45-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-95
+46            android:exported="false" >
+46-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-37
+47            <intent-filter>
+47-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-20:29
+48                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+48-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-78
+48-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:25-75
+49            </intent-filter>
+50        </service>
+51
+52        <receiver
+52-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:9-30:20
+53            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingReceiver"
+53-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-96
+54            android:exported="true"
+54-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-36
+55            android:permission="com.google.android.c2dm.permission.SEND" >
+55-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-73
+56            <intent-filter>
+56-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-29:29
+57                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+57-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:17-81
+57-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:25-78
+58            </intent-filter>
+59        </receiver>
+60
+61        <meta-data
+61-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:9-34:36
+62            android:name="firebase_messaging_auto_init_enabled"
+62-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:13-64
+63            android:value="true" />
+63-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:13-33
+64        <meta-data
+64-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:9-37:32
+65            android:name="com.google.firebase.messaging.default_notification_channel_id"
+65-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-89
+66            android:value="" />
+66-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-29
+67        <meta-data
+67-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:9-40:47
+68            android:name="com.google.firebase.messaging.default_notification_color"
+68-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-84
+69            android:resource="@color/white" />
+69-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:13-44
+70        <meta-data
+70-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:36
+71            android:name="app_data_collection_default_enabled"
+71-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+72            android:value="true" />
+72-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-33
+73
+74        <service
+74-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-18:19
+75            android:name="com.google.firebase.components.ComponentDiscoveryService"
+75-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:18-89
+76            android:directBootAware="true"
+76-->[com.google.firebase:firebase-common:20.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/67e4f19d902c8423f1a2ac5d5b5b1c13/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+77            android:exported="false" >
+77-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:51:13-37
+78            <meta-data
+78-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:85
+79                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+79-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-120
+80                android:value="com.google.firebase.components.ComponentRegistrar" />
+80-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-82
+81            <meta-data
+81-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:52:13-54:85
+82                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+82-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:53:17-119
+83                android:value="com.google.firebase.components.ComponentRegistrar" />
+83-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:54:17-82
+84            <meta-data
+84-->[com.google.firebase:firebase-datatransport:18.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/c0a06ad380016bed180cac95a3c42417/transformed/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:28:13-30:85
+85                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+85-->[com.google.firebase:firebase-datatransport:18.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/c0a06ad380016bed180cac95a3c42417/transformed/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:29:17-115
+86                android:value="com.google.firebase.components.ComponentRegistrar" />
+86-->[com.google.firebase:firebase-datatransport:18.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/c0a06ad380016bed180cac95a3c42417/transformed/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:30:17-82
+87            <meta-data
+87-->[com.google.firebase:firebase-installations:17.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/8f5017baceeb055b8d2ce9985d782c2f/transformed/jetified-firebase-installations-17.0.0/AndroidManifest.xml:18:13-20:85
+88                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+88-->[com.google.firebase:firebase-installations:17.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/8f5017baceeb055b8d2ce9985d782c2f/transformed/jetified-firebase-installations-17.0.0/AndroidManifest.xml:19:17-127
+89                android:value="com.google.firebase.components.ComponentRegistrar" />
+89-->[com.google.firebase:firebase-installations:17.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/8f5017baceeb055b8d2ce9985d782c2f/transformed/jetified-firebase-installations-17.0.0/AndroidManifest.xml:20:17-82
+90        </service>
+91
+92        <provider
+92-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:9-24:38
+93            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+93-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-88
+94            android:authorities="com.rentalpay_app_v2.reactnativefirebaseappinitprovider"
+94-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-86
+95            android:exported="false"
+95-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-37
+96            android:initOrder="99" />
+96-->[:react-native-firebase_app] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-35
+97
+98        <receiver
+98-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:28:9-35:20
+99            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+99-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:29:13-78
+100            android:exported="true"
+100-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:30:13-36
+101            android:permission="com.google.android.c2dm.permission.SEND" >
+101-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:31:13-73
+102            <intent-filter>
+102-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-29:29
+103                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+103-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:17-81
+103-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:25-78
+104            </intent-filter>
+105        </receiver>
+106        <!--
+107             FirebaseMessagingService performs security checks at runtime,
+108             but set to not exported to explicitly avoid allowing another app to call it.
+109        -->
+110        <service
+110-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:41:9-48:19
+111            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+111-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:42:13-82
+112            android:directBootAware="true"
+112-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:43:13-43
+113            android:exported="false" >
+113-->[com.google.firebase:firebase-messaging:23.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/6df06e1f738674f90aaa6ba68dfea839/transformed/jetified-firebase-messaging-23.0.0/AndroidManifest.xml:44:13-37
+114            <intent-filter android:priority="-500" >
+114-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-20:29
+115                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+115-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-78
+115-->[:react-native-firebase_messaging] /Users/fabricioalves/rentalpay_app_v2/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:25-75
+116            </intent-filter>
+117        </service>
+118        <service
+118-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/09b1b90cc9e72cb714b519ca12143527/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:29:9-35:19
+119            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+119-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/09b1b90cc9e72cb714b519ca12143527/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:30:13-103
+120            android:exported="false" >
+120-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/09b1b90cc9e72cb714b519ca12143527/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:31:13-37
+121            <meta-data
+121-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/09b1b90cc9e72cb714b519ca12143527/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:32:13-34:39
+122                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+122-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/09b1b90cc9e72cb714b519ca12143527/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:33:17-94
+123                android:value="cct" />
+123-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/09b1b90cc9e72cb714b519ca12143527/transformed/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:34:17-36
+124        </service>
+125        <service
+125-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/18a087d3c0c31fba5c2a5f5c6404ae83/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:26:9-30:19
+126            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+126-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/18a087d3c0c31fba5c2a5f5c6404ae83/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:27:13-117
+127            android:exported="false"
+127-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/18a087d3c0c31fba5c2a5f5c6404ae83/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:28:13-37
+128            android:permission="android.permission.BIND_JOB_SERVICE" >
+128-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/18a087d3c0c31fba5c2a5f5c6404ae83/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:29:13-69
+129        </service>
+130
+131        <receiver
+131-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/18a087d3c0c31fba5c2a5f5c6404ae83/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:32:9-34:40
+132            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+132-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/18a087d3c0c31fba5c2a5f5c6404ae83/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:33:13-132
+133            android:exported="false" />
+133-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/18a087d3c0c31fba5c2a5f5c6404ae83/transformed/jetified-transport-runtime-3.0.0/AndroidManifest.xml:34:13-37
+134
+135        <activity
+135-->[com.google.android.gms:play-services-auth:20.1.0] /Users/fabricioalves/.gradle/caches/transforms-3/86ff0a7fb80f1e33eb911d06d107a2c7/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:23:9-27:75
+136            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+136-->[com.google.android.gms:play-services-auth:20.1.0] /Users/fabricioalves/.gradle/caches/transforms-3/86ff0a7fb80f1e33eb911d06d107a2c7/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:24:13-93
+137            android:excludeFromRecents="true"
+137-->[com.google.android.gms:play-services-auth:20.1.0] /Users/fabricioalves/.gradle/caches/transforms-3/86ff0a7fb80f1e33eb911d06d107a2c7/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:25:13-46
+138            android:exported="false"
+138-->[com.google.android.gms:play-services-auth:20.1.0] /Users/fabricioalves/.gradle/caches/transforms-3/86ff0a7fb80f1e33eb911d06d107a2c7/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:26:13-37
+139            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+139-->[com.google.android.gms:play-services-auth:20.1.0] /Users/fabricioalves/.gradle/caches/transforms-3/86ff0a7fb80f1e33eb911d06d107a2c7/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:27:13-72
+140        <!--
+141            Service handling Google Sign-In user revocation. For apps that do not integrate with
+142            Google Sign-In, this service will never be started.
+143        -->
+144        <service
+144-->[com.google.android.gms:play-services-auth:20.1.0] /Users/fabricioalves/.gradle/caches/transforms-3/86ff0a7fb80f1e33eb911d06d107a2c7/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:33:9-37:51
+145            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+145-->[com.google.android.gms:play-services-auth:20.1.0] /Users/fabricioalves/.gradle/caches/transforms-3/86ff0a7fb80f1e33eb911d06d107a2c7/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:34:13-89
+146            android:exported="true"
+146-->[com.google.android.gms:play-services-auth:20.1.0] /Users/fabricioalves/.gradle/caches/transforms-3/86ff0a7fb80f1e33eb911d06d107a2c7/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:35:13-36
+147            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+147-->[com.google.android.gms:play-services-auth:20.1.0] /Users/fabricioalves/.gradle/caches/transforms-3/86ff0a7fb80f1e33eb911d06d107a2c7/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:36:13-107
+148            android:visibleToInstantApps="true" />
+148-->[com.google.android.gms:play-services-auth:20.1.0] /Users/fabricioalves/.gradle/caches/transforms-3/86ff0a7fb80f1e33eb911d06d107a2c7/transformed/jetified-play-services-auth-20.1.0/AndroidManifest.xml:37:13-48
+149
+150        <activity
+150-->[com.google.android.gms:play-services-base:18.0.1] /Users/fabricioalves/.gradle/caches/transforms-3/55f5c5c6a27548aba5f14a1807f05a4a/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+151            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+151-->[com.google.android.gms:play-services-base:18.0.1] /Users/fabricioalves/.gradle/caches/transforms-3/55f5c5c6a27548aba5f14a1807f05a4a/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+152            android:exported="false"
+152-->[com.google.android.gms:play-services-base:18.0.1] /Users/fabricioalves/.gradle/caches/transforms-3/55f5c5c6a27548aba5f14a1807f05a4a/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+153            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+153-->[com.google.android.gms:play-services-base:18.0.1] /Users/fabricioalves/.gradle/caches/transforms-3/55f5c5c6a27548aba5f14a1807f05a4a/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+154
+155        <provider
+155-->[com.google.firebase:firebase-common:20.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/67e4f19d902c8423f1a2ac5d5b5b1c13/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+156            android:name="com.google.firebase.provider.FirebaseInitProvider"
+156-->[com.google.firebase:firebase-common:20.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/67e4f19d902c8423f1a2ac5d5b5b1c13/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+157            android:authorities="com.rentalpay_app_v2.firebaseinitprovider"
+157-->[com.google.firebase:firebase-common:20.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/67e4f19d902c8423f1a2ac5d5b5b1c13/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+158            android:directBootAware="true"
+158-->[com.google.firebase:firebase-common:20.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/67e4f19d902c8423f1a2ac5d5b5b1c13/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+159            android:exported="false"
+159-->[com.google.firebase:firebase-common:20.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/67e4f19d902c8423f1a2ac5d5b5b1c13/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+160            android:initOrder="100" />
+160-->[com.google.firebase:firebase-common:20.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/67e4f19d902c8423f1a2ac5d5b5b1c13/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+161
+162        <meta-data
+162-->[com.google.android.gms:play-services-basement:18.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/f5d029dcc6be4a31d5a579fcfba539f6/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+163            android:name="com.google.android.gms.version"
+163-->[com.google.android.gms:play-services-basement:18.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/f5d029dcc6be4a31d5a579fcfba539f6/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+164            android:value="@integer/google_play_services_version" />
+164-->[com.google.android.gms:play-services-basement:18.0.0] /Users/fabricioalves/.gradle/caches/transforms-3/f5d029dcc6be4a31d5a579fcfba539f6/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+165    </application>
+166
+167</manifest>

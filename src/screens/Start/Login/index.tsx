@@ -1,35 +1,5 @@
-import React, {useState, useEffect, useCallback, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Alert} from 'react-native';
-
-import  {useForm} from 'react-hook-form';
-import * as Yup from 'yup';
-import { yupResolver} from '@hookform/resolvers/yup'
-
-import {RFValue} from 'react-native-responsive-fontsize';
-import {Button} from '../../../components/Button';
-import {StatusBar} from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
-import Feather from 'react-native-vector-icons/Feather'
-Feather.loadFont();
-import messaging from '@react-native-firebase/messaging';
-import DeviceInfo from 'react-native-device-info';
-import {useFocusEffect, useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {useDispatch, useSelector} from 'react-redux';
-
-
-//---------ACTIONS---------
-import {onLogin,setDeviceName, setTokenPush} from '../../../store/actions/user';
-import {RootState} from '../../../store/storeConfig';
-
-
-import Input from '../../../components/Input';
-import { InputForm} from '../../../components/InputForm';
-import ArrowLeft from '../../../assets/icons/arrowLeftIcon.svg';
-
-import {RootStackParamList} from '../../../utils/RootStackParams';
-type screenPin = NativeStackNavigationProp<RootStackParamList, 'Pin'>;
-import { useAuth}  from '../../../hooks/AuthContext'; 
 
 import {
   Container,
@@ -44,25 +14,35 @@ import {
   LabelForgot,
 } from './styles';
 
-interface formData {
-  email:string;
-  password:string;
+import {RFValue} from 'react-native-responsive-fontsize';
+import {Button} from '../../../components/Button';
+import {StatusBar} from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
+import Feather from 'react-native-vector-icons/Feather'
+Feather.loadFont();
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-}
 
-const schema =  Yup.object().shape({
-  name:Yup.string().required('Email é obrigatorio'),
-  password:Yup.string().required('Password é obrigatorio')
+import {useDispatch, useSelector} from 'react-redux';
+import Input from '../../../components/Input';
+import {RootStackParamList} from '../../../utils/RootStackParams';
 
-})
+import ArrowLeft from '../../../assets/icons/arrowLeftIcon.svg';
+
+import {useNavigation} from '@react-navigation/native';
+import {RootState} from '../../../store/storeConfig';
+
+type screenPin = NativeStackNavigationProp<RootStackParamList, 'Pin'>;
+
+// import api from '../../../services/api';
+
+import {onLogin} from '../../../store/actions/user';
 
 export function Login() {
-  const {user} = useAuth();
   const navigation = useNavigation<screenPin>();
   const {access_token, pin, device_token_status, device_token} = useSelector(
     (state: RootState) => state.user,
   );
-  
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
 
@@ -73,43 +53,6 @@ export function Login() {
   function handleLogin() {
     navigation.navigate('Pin');
   }
-  const {
-    control, 
-    handleSubmit,
-    formState : { errors}
-  } = useForm({
-    resolver:yupResolver(schema)
-  });
-
-  function testeRegister(form:formData) {
-   const data = {
-     email:form.email,
-     password:form.password,
-   }
-
-  }
-
-
-
-  
-
-  useFocusEffect(
-    useCallback(() =>{
-      async function getFcmToken() {
-        const fcmToken = await messaging().getToken();
-       
-        if (fcmToken) {
-         
-          DeviceInfo.getDeviceName().then(deviceName => {
-            dispatch(setDeviceName({device_name: deviceName}));
-            dispatch(setTokenPush({device_token: fcmToken}));
-          });
-        }
-      }
-      getFcmToken()
-
-    },[device_token])
-  )
 
  
 
@@ -147,7 +90,7 @@ export function Login() {
       />
       <Content>
         <Header>
-          <BackButtom onPress={()=> navigation.goBack()}>
+          <BackButtom>
             <ArrowLeft width={RFValue(14)} height={RFValue(14)} />
           </BackButtom>
 
@@ -159,27 +102,39 @@ export function Login() {
         <LoginText>Utilize seu login Rental para {'\n'}acessar.</LoginText>
 
         <Form>
-          <InputForm
-          name="email"
-          control={control}
-          placeholder="Email"
-           
+          <Input
+            placeholder="Email"
+            autoCorrect={false}
+            autoCapitalize="none"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+            placeholderTextColor="#A6A6A6"
           />
-          <InputForm
-          name="password"
-          control={control}
-          placeholder="password"
-           
+          <Input
+            placeholder="Senha"
+            autoCorrect={false}
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry={!show}
+            placeholderTextColor="#A6A6A6"
+            icon={() =>
+              !show ? (
+                <Icon name="eye-off" color="#000000" size={RFValue(20)} />
+              ) : (
+                <Icon name="eye" color="#000000" size={RFValue(20)} />
+              )
+            }
+            handlePress={() => setShow(!show)}
           />
 
           <ButtonForgot onPress={() => navigation.navigate('Forgot')}>
             <LabelForgot>Esqueceu sua senha?</LabelForgot>
           </ButtonForgot>
 
-          <Button title="Entrar" type="primary" onPress={handleSubmit(testeRegister)} />
+          <Button title="Entrar" type="primary" onPress={handleSignium} />
         </Form>
       </Content>
     </Container>
   );
 }
-

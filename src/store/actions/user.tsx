@@ -22,6 +22,8 @@ export interface UserProps {
   currencys?: [] | null;
   google2fa_secret?: string | null;
   device_token_status?: boolean | null;
+  profile?: any;
+  creditExtract: [] | any
 }
 
 export interface deviceUser {
@@ -55,12 +57,12 @@ export const setDeviceName = (device_name: string) => {
   };
 };
 
-// export const setBalance = (balance: UserProps) => {
-//   return {
-//     type: 'GET_BALANCE',
-//     payload: balance,
-//   };
-// };
+export const setLoadExtractCredit = (credit:Object) => {
+  return {
+    type: 'SET_CREDIT_EXTRACT',
+    payload: credit,
+  };
+};
 
 export const setWallet = (wallet: Object) => {
   return {
@@ -110,9 +112,12 @@ export const onLogin = payload => {
       })
 
       .then(async response => {
+       
 
         const { access_token } = response.data;
-        const { pin, device_token_status, } = response.data.api;
+        const { pin, device_token_status, user } = response.data.api;
+        // const {name} = response.data.user;
+
 
         if (response.data.status) {
           dispatch(
@@ -120,7 +125,8 @@ export const onLogin = payload => {
               access_token: access_token,
               pin: pin,
               device_token_status: device_token_status,
-              email_verified_at: null
+              email_verified_at: null,
+              profile: user
             }),
           );
           await AsyncStorage.setItem(
@@ -159,7 +165,7 @@ export const onLoadBalance = payload => {
         headers: { 'device-token': payload.device_token },
       })
       .then(response => {
-        console.log(response.data)
+        console.log('--------- my balance', response.data)
         dispatch(setLoading({ loading: false }));
         const { coins, total } = response.data;
         dispatch(
@@ -182,14 +188,14 @@ export const onLoadBalance = payload => {
 };
 
 export const getExtract = payload => {
-  return  dispatch => {
+  return dispatch => {
     dispatch(setLoading({ loading: true }));
     api
       .get('api/extract', {
         headers: { 'device-token': payload.device_token },
       })
       .then(response => {
-     
+
         const { results } = response.data;
         if (response.data.status) {
           dispatch(setLoadExtract({ extract: results }));
@@ -202,4 +208,31 @@ export const getExtract = payload => {
       })
       .finally(() => dispatch(setLoading({ loading: false })));
   };
+
 };
+
+export const getExtractCredit = payload => {
+  return dispatch => {
+    dispatch(setLoading({ loading: true }));
+    api
+      .get('api/extract/credits', {
+        headers: { 'device-token': payload.device_token },
+      })
+      .then(response => {
+
+        const { credits } = response.data;
+        if (response.data.status) {
+          console.log('meuuu extract credit', response.data)
+          dispatch(setLoadExtractCredit({ creditExtract: credits }));
+        }
+
+        dispatch(setLoading({ loading: false }));
+      })
+      .catch(error => {
+        dispatch(setLoading({ loading: false }));
+      })
+      .finally(() => dispatch(setLoading({ loading: false })));
+  };
+
+};
+
